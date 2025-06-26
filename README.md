@@ -8,14 +8,6 @@ Capstone project where I **designed** and **deployed** a **highly available**, *
 
 To Ensure **high availability** and **fault tolerance**, the architecture is distributed across several **Availability Zones (AZs)** within
  the EU-North-1 region. Web servers reside in private subnets, with NAT Gateways and the Application Load Balancer operating from public subnets."
-
-![Architecture overview](https://github.com/Alielbaqly/AWS-PROJECT-1/blob/main/Architecture%20Overview.png?raw=true)
-<div align="center">
-  
-![IAAS](https://github.com/Alielbaqly/AWS-PROJECT-1/blob/main/Service%20type.png?raw=true)
-
-</div>
-
 ---
 
 ## Infrastructure Components
