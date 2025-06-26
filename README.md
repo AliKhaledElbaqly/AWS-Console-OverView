@@ -8,6 +8,7 @@ Capstone project where I **designed** and **deployed** a **highly available**, *
 
 To Ensure **high availability** and **fault tolerance**, the architecture is distributed across several **Availability Zones (AZs)** within
  the EU-North-1 region. Web servers reside in private subnets, with NAT Gateways and the Application Load Balancer operating from public subnets."
+ 
 ---
 
 ## Infrastructure Components
