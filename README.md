@@ -37,17 +37,17 @@ Custom **Virtual Private Cloud (VPC)**, forming an isolated network foundation. 
 to facilitate secure communication with the external internet. The network is strategically segmented into **two public subnets** and
  two private subnets, **distributed across multiple Availability Zones** to enhance **fault tolerance.**
 
-![VPC & Subnets](https://github.com/Alielbaqly/AWS-PROJECT-1/blob/main/vpc%20&%20subnets%20.png?raw=true)
+![VPC & Subnets](https://github.com/AliKhaledElbaqly/AWS-PROJECT-1/blob/main/Media/vpc%20&%20subnets%20.png?raw=true)
 
 ### Internet connectivity through RTs 
 
 Outbound internet connectivity for resources residing in the private subnets is managed by two highly available NAT Gateways, deployed within the public subnets. Routing is meticulously configured: a public route table directs traffic from the public subnets through the Internet Gateway, while 
 two private route tables ensure that instances in the private subnets route their outbound internet traffic via the dedicated NAT Gateways.
 
-![VPC](https://github.com/Alielbaqly/AWS-PROJECT-1/blob/main/project%20vpc.png?raw=true)
-![Public & Private RTs](https://github.com/Alielbaqly/AWS-PROJECT-1/blob/main/RT%20Public%20&%20Private%20.png?raw=true)
-![Elastic IP](https://github.com/Alielbaqly/AWS-PROJECT-1/blob/main/ELastic%20IP%20for%20Nat%20GW.png?raw=true)
-![NAT GATEWAYS](https://github.com/Alielbaqly/AWS-PROJECT-1/blob/main/NAT%20GATEWAYS.png?raw=true)
+![VPC](https://github.com/AliKhaledElbaqly/AWS-PROJECT-1/blob/main/Media/project%20vpc.png?raw=true)
+![Public & Private RTs](https://github.com/AliKhaledElbaqly/AWS-PROJECT-1/blob/main/Media/RT%20Public%20&%20Private%20.png?raw=true)
+![Elastic IP](https://github.com/AliKhaledElbaqly/AWS-PROJECT-1/blob/main/Media/ELastic%20IP%20for%20Nat%20GW.png?raw=true)
+![NAT GATEWAYS](https://github.com/AliKhaledElbaqly/AWS-PROJECT-1/blob/main/Media/NAT%20GATEWAYS.png?raw=true)
 
 
 ### EC2, Security & Availability 
@@ -55,18 +55,18 @@ two private route tables ensure that instances in the private subnets route thei
 The application's web tier is powered by two Elastic Block Store (EBS) backed EC2 instances (Web_Server1 and Web_Server2), securely hosted within the private subnets. Granular traffic control is enforced at the instance and load balancer levels through two key Security Groups: WebSG for the EC2 web servers and ALBSG for the load balancer.
 An Application Load Balancer (WebALB) is deployed in the public subnets. It intelligently distributes incoming application traffic across the healthy EC2 instances, which are organized into a Target Group (WebTG). This setup significantly enhances application availability and responsiveness.
 
-![EC2 INSTANCES](https://github.com/Alielbaqly/AWS-PROJECT-1/blob/main/EC2%20Instances%20servers.png?raw=true)
-![Health Availabilty](https://github.com/Alielbaqly/AWS-PROJECT-1/blob/main/Availability%20Test.png?raw=true)
-![High Availability](https://github.com/Alielbaqly/AWS-PROJECT-1/blob/main/High%20availability.png?raw=true)
+![EC2 INSTANCES](https://github.com/AliKhaledElbaqly/AWS-PROJECT-1/blob/main/Media/EC2%20Instances%20servers.png?raw=true)
+![Health Availabilty](https://github.com/AliKhaledElbaqly/AWS-PROJECT-1/blob/main/Media/Availability%20Test.png?raw=true)
+![High Availability](https://github.com/AliKhaledElbaqly/AWS-PROJECT-1/blob/main/Media/High%20availability.png?raw=true)
 
 
 ### Scalability & Resilience ( Auto Scaling )
 
 To ensure dynamic scalability and resilience, an Auto Scaling Group is implemented. This group leverages a Launch Template, which defines the configuration for new EC2 instances. The Launch Template ensures instances are appropriately configured with the WebSG security group and are prepared to be targets for the Application Load Balancer (itself protected by ALBSG). The Auto Scaling Group automatically adjusts the number of EC2 instances based on demand or health status, ensuring optimal performance and cost-efficiency.
 
-![ASG group](https://github.com/Alielbaqly/AWS-PROJECT-1/blob/main/Auto%20Scaling.png?raw=true)
-![Auto Scaling](https://github.com/Alielbaqly/AWS-PROJECT-1/blob/main/Auto%20scaling%20test.png?raw=true)
-![Auto Saling 2](https://github.com/Alielbaqly/AWS-PROJECT-1/blob/main/Auto%20scaling%20test.png?raw=true)
+![ASG group](https://github.com/AliKhaledElbaqly/AWS-PROJECT-1/blob/main/Media/Auto%20Scaling.png?raw=true)
+![Auto Scaling](https://github.com/AliKhaledElbaqly/AWS-PROJECT-1/blob/main/Media/Auto%20scaling%20test.png?raw=true)
+![Auto Saling 2](https://github.com/AliKhaledElbaqly/AWS-PROJECT-1/blob/main/Media/Auto%20scaling%20test.png?raw=true)
 
 ---
 
@@ -94,13 +94,13 @@ echo "This is an app server in AWS Region EU-North-1" > /var/www/html/index.html
 ---
 ## Test Results
 
-![Script Instance zone A test](https://github.com/Alielbaqly/AWS-PROJECT-1/blob/main/User%20Data%20Test.png?raw=true)
-![Script Instance Zone B test](https://github.com/Alielbaqly/AWS-PROJECT-1/blob/main/User%20Data%20Test.png?raw=true)
-![Load Balancer Zone A test](https://github.com/Alielbaqly/AWS-PROJECT-1/blob/main/Load%20Balancer%202.png?raw=true)
-![Load Balancer Zone B test](https://github.com/Alielbaqly/AWS-PROJECT-1/blob/main/Load%20Balancer%201.png?raw=true)
+![Script Instance zone A test](https://github.com/AliKhaledElbaqly/AWS-PROJECT-1/blob/main/Media/User%20Data%20Test.png?raw=true)
+![Script Instance Zone B test](https://github.com/AliKhaledElbaqly/AWS-PROJECT-1/blob/main/Media/User%20Data%20Test.png?raw=true)
+![Load Balancer Zone A test](https://github.com/AliKhaledElbaqly/AWS-PROJECT-1/blob/main/Media/Load%20Balancer%202.png?raw=true)
+![Load Balancer Zone B test](https://github.com/AliKhaledElbaqly/AWS-PROJECT-1/blob/main/Media/Load%20Balancer%201.png?raw=true)
 
 ---
 
 ## Created By
 
-From Scratch by  [@Alielbaqly](https://github.com/Alielbaqly)
+From Scratch by  [@AliKhaled](https://github.com/AliKhaledElbaqly)
