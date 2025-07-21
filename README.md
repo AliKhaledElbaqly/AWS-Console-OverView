@@ -1,3 +1,4 @@
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 ![Bash](https://img.shields.io/badge/language-Bash-blue.svg)
 
 
