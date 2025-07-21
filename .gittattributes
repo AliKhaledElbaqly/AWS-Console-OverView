@@ -1,0 +1,2 @@
+* linguist-detectable
+*.sh linguist-language=Bash
