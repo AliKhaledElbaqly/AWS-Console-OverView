@@ -1,3 +1,6 @@
+![Bash](https://img.shields.io/badge/language-Bash-blue.svg)
+
+
 # AWS Capstone Project - Multi-Tier Web Application
 
 Capstone project where I **designed** and **deployed** a **highly available**, **multi-tier web application** on AWS. This involved setting up a custom VPC, configuring public/private subnets, deploying EC2 instances, implementing an Application Load Balancer, and enabling Auto Scaling for elasticity and fault tolerance.
